@@ -16,12 +16,12 @@ omx = require('omxcontrol');
 
 path = require("path");
 
-Keyboard = require('./input.js');
+Keyboard = require('linux-input');
 
 port = process.env.PORT;
 
 if (port === void 0) {
-  port = 8081; 
+  port = 8081;
 }
 
 io.configure(function() {

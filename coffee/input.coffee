@@ -1,6 +1,6 @@
 
 fs = require('fs')
-#ref = require('ref') 
+
 EventEmitter = require('events').EventEmitter
 KEYS = require './key_codes' 
 
@@ -10,8 +10,7 @@ EVENT_TYPES = ['keyup','keypress','keydown']
 	 
 class Keyboard extends EventEmitter
 	
-	constructor: (dev) ->
-	    console.log "test kann dass sein ba "
+	constructor: (dev) -> 	    
 		@dev = dev
 		@bufferSize = 24
 		@buf = new Buffer(@bufferSize);    

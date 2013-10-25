@@ -5,6 +5,7 @@
     "express": "3.x",
     "socket.io": "0.9.x",
     "omxcontrol": "*",
+    "linux-input": "git://github.com/bastifeld/linux-input.git#master" 
     
   },
   "devDependencies": {

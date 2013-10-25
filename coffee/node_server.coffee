@@ -7,7 +7,7 @@ io = require('socket.io').listen(server)
 readline = require('readline')
 omx = require('omxcontrol')
 path = require("path")
-Keyboard = require('./input.js')
+Keyboard = require('linux-input') 
 
 port = process.env.PORT
 
