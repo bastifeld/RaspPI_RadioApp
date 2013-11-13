@@ -13,6 +13,9 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-peon-gui": "~0.4.0",
     "grunt-nodemon": "*",
-    "grunt-concurrent": "*"
+    "grunt-concurrent": "*",
+    "grunt-browserify":"*",
+    "grunt-contrib-less":"*",
+    "coffeeify": "*"
   }
 }

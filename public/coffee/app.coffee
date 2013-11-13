@@ -1,4 +1,7 @@
 
+
+SocketNavigation = require('./socket_navigation.coffee') 
+
 $ ->
 	
 	addTemplate = (hdbTemplate, element, context, callback) ->
@@ -25,9 +28,9 @@ $ ->
 		title: "meine Radio App"	    
 	addTemplate("header.html","#header",headerContext) 
 
-	context = ()
+	context = 
 		senders: [
-			{name: "ndr 2", url:"http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr2_hi_mp3"},
+			{name: "ndr 2 test", url:"http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr2_hi_mp3"},
 			{name: "wdr 2", url:"http://wdr-mp3-m-wdr2-koeln.akacast.akamaistream.net/7/812/119456/v1/gnl.akacast.akamaistream.net/wdr-mp3-m-wdr2-koeln"},
 			{name: "radio21", url:"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radio21/livestream.mp3"}
 			{name: "stop", url:"stop"}
