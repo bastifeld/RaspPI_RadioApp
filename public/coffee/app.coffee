@@ -2,7 +2,7 @@
 
 SocketNavigation = require('./socket_navigation.coffee') 
 
-$ ->
+$ ->  
 	
 	addTemplate = (hdbTemplate, element, context, callback) ->
 		$.get(hdbTemplate, (data) ->
@@ -44,7 +44,7 @@ $ ->
 
 	navi = new SocketNavigation
 
-	navi.on "KEY_DOWN" , () ->
+	navi.on  "KEY_DOWN" , (event)->
 		oldSelected = $(".active")
 		nextSelected = oldSelected.next();
 		if nextSelected.length > 0			
@@ -52,7 +52,7 @@ $ ->
 			oldSelected.removeClass("active");			
 			addCheckSVG() 
 	
-	navi.on "KEY_UP" , () ->
+	navi.on  "KEY_UP" , (event) ->
 		oldSelected = $(".active")
 		prevSelected = oldSelected.prev();
 		if prevSelected.length > 0
@@ -60,7 +60,7 @@ $ ->
 			oldSelected.removeClass("active");
 			addCheckSVG() 
 		
-	navi.on "KEY_ENTER", () ->
+	navi.on  "KEY_ENTER", (event) ->
 		oldSelected = $(".active")
 		if oldSelected.attr("url") is "stop" 
 			socket.emit("stop")

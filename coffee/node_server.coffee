@@ -28,7 +28,7 @@ console.log path.join(__dirname, '..','public')
 app.use "/" , express.static path.join(__dirname, '..', 'public') 
 
 server.listen(port, ()->  
-	console.log('listening on port: ' + port)
+	console.log('listening on port test: ' + port)
 )
 
 
@@ -42,9 +42,9 @@ io.sockets.on('connection',  (socket)->
 	k.on('keypress', (event)->
 		console.log("keypress hallo: " +event.keyId);
 		
-		relevantKeys = ["KEY_UP","KEY_PAGEUP","KEY_LEFT","KEY_RIGHT","KEY_END","KEY_DOWN","KEY_ENTER"]
+		relevantKeys = [Keyboard.KEYS.KEY_UP,Keyboard.KEYS.KEY_PAGEUP,Keyboard.KEYS.KEY_LEFT,Keyboard.KEYS.KEY_RIGHT,Keyboard.KEYS.KEY_END,Keyboard.KEYS.KEY_DOWN,Keyboard.KEYS.KEY_ENTER]
 		if event.keyId in relevantKeys
-			socket.emit('controll', { action: event.keyId });
+			socket.emit('controll', { action: event  });
 
 	)
 

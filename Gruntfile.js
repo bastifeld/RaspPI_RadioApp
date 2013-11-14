@@ -60,6 +60,17 @@ module.exports = function(grunt) {
                     "public/css/style.css": "public/less/style.less"
                 }
             }
+        },
+
+        coffee: {
+            glob_to_multiple: {
+                expand: true,
+                flatten: true,
+                cwd: 'coffee/',
+                src: ['*.coffee'],
+                dest: 'js/',
+                ext: '.js'
+  }
         }
 	});
 
@@ -69,8 +80,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-peon-gui');
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-coffee');
 
-    grunt.registerTask('build', ['browserify','less']);
+    grunt.registerTask('build', ['browserify','less', 'coffee']);
     // grunt.registerTask('default', ['watch']);
     // grunt.registerTask('watch', ['watch']);
     grunt.registerTask('default', ['concurrent:target']);
